@@ -9,13 +9,14 @@ def primeCheck(number):
     if number < 2:
         # Negatives, 0 and 1 are not primes
         return False
-    if number < 4:
-        # 2 and 3 are primes
+    counter = 0 #this will be used as a counter
+    for i in range(2,number):
+        if (number)%(i)==0:
+            counter += 1        
+    if counter == 0:
         return True
-    if number % 2 == 0:
-        # Even values are not primes
+    else:
         return False
-
     # Except 2, all primes are odd. If any odd value divide
     # the number, then that number is not prime.
     odd_numbers = range(3, int(math.sqrt(number)) + 1, 2)
